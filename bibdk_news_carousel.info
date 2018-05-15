@@ -1,0 +1,14 @@
+name = Bibliotek.dk - News carousel
+description = Show Bibliotek.dk news results in a carousel
+package = Bibliotek.dk
+version = "7.x-0.1"
+core = "7.x"
+
+dependencies[] = microcurl
+dependencies[] = open_moreinfo
+dependencies[] = ting_openformat
+dependencies[] = image
+
+files[] = test/bibdk_news_carousel.test
+
+configure = admin/config/user-interface/bibdk_news_carousel

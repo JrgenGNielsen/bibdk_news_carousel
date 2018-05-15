@@ -1,0 +1,56 @@
+<?php
+/**
+ * @file
+ * Bibliotek.dk search carousel module main file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function bibdk_news_carousel_menu() {
+
+  $items = array();
+
+  $items['admin/config/user-interface/bibdk_news_carousel'] = array(
+    'title' => 'Bibliotek.dk news carousel',
+    'description' => 'Manage content for frontpage carousel.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bibdk_news_carousel_admin_form'),
+    'access arguments' => array('access administration pages'),
+    'file' => 'bibdk_news_carousel.admin.inc',
+  );
+
+  $items['admin/config/user-interface/bibdk_news_carousel/settings'] = array(
+    'title' => 'Content',
+    'description' => 'Manage content for frontpage carousel.',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items['admin/config/user-interface/bibdk_news_carousel/search_settings'] = array(
+    'title' => 'Search settings',
+    'description' => 'Manage settings for the news webservice',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bibdk_news_carousel_search_admin_form'),
+    'access arguments' => array('access administration pages'),
+    'file' => 'bibdk_news_carousel.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 0,
+  );
+
+  return $items;
+
+}
+
+
+/**
+ * Implements hook_bibdk_news_carousel_query().
+ */
+function bibdk_news_carousel_bibdk_news_carousel_query($query) {
+
+  $query['query'] = 'phrase.subject="heavy rock" OR phrase.subject="grunge"';
+
+  return $query;
+}
+
+
