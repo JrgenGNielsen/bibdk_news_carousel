@@ -1,0 +1,135 @@
+#!groovy
+
+def PRODUCT = 'infomedia'
+
+def DOCKER_HOST = 'tcp://dscrum-is:2375'
+def MAIL_RECIPIENTS = 'lkh@dbc.dk, pjo@dbc.dk, jgn@dbc.dk, las@dbc.dk'
+def WORKSPACE = "workspace/$PRODUCT"
+// the image to use on different stages
+def infomediaImage
+
+node("d8-php7-builder") {
+    ws(WORKSPACE) {
+    	withEnv(["DOCKER_HOST=${DOCKER_HOST}"]) {
+	        stage('SVN: checkout code') {
+	            checkout scm
+	
+	            // get externals
+	            sh 'svn up'
+	        }
+	
+	        stage("prepare website build (copy files)") {
+	            // make a www folder
+	            dir('docker/webservice') {
+	                // prepare the build
+	                sh """
+	                    rm -rf www
+	                    """
+	                sh """
+	                    mkdir www
+	                    """
+	            }
+	            // copy files needed for docker image
+	            sh """
+	                cp -r \
+	                includes/ \
+	                infomedia.wsdl \
+	                infomedia.xsd \
+	                infomedia_logo.gif \
+	                infomedia_swagger_class.php \
+	                infomedia_webservice_class.php \
+	                OLS_class_lib/ \
+	                server.php \
+	                service_classes.php \
+	                xml/ \
+	                docker/webservice/www/
+	                """
+	        }
+	
+	        stage("prepare unittest build (copy files)") {
+	            // make a www folder
+	            dir('docker/unittest') {
+	                // prepare the build
+	                sh """
+	                    rm -rf www
+	                    """
+	                sh """
+	                    mkdir www
+	                    """
+	            }
+	            // copy files needed for unittest also
+	            sh """
+	                cp -r \
+	                includes/ \
+	                infomedia.wsdl \
+	                infomedia.xsd \
+	                infomedia_logo.gif \
+	                infomedia_swagger_class.php \
+	                infomedia_webservice_class.php \
+	                OLS_class_lib/ \
+	                server.php \
+	                service_classes.php \
+	                testfiles/ \
+	                UnitTestServiceClasses.php \
+	                xml/ \
+	                docker/unittest/www/
+	                """ 
+	        }
+	
+	        stage("Docker: cleanup") {
+	            // Stop running container - suppress errors (if container is not there)
+	            sh """
+	                docker ps -q --filter ancestor="docker-dscrum.dbc.dk/infomedia" | xargs -r docker stop
+	                """
+	            // remove container
+	            sh """
+	                docker ps -aq --filter ancestor="docker-dscrum.dbc.dk/infomedia"| xargs -r docker rm
+	                """
+	            // CLEAN UP - remove unused images
+	            sh """
+	                docker image prune -f
+	                """
+	        }
+	
+	        stage("Docker: build image") {
+	            dir("docker/webservice") {
+	                // build the image
+	                infomediaImage = docker.build("docker-dscrum.dbc.dk/infomedia:latest")
+	            }
+	        }
+	        stage("Run a test") {
+	            sh """
+	            echo FISK
+	            """
+	            dir("docker/unittest"){
+	                def testImage =  docker.build("unittesting")
+	                testImage.run("-p 9999:80 --name unittest")
+	                sh """
+	                docker exec unittest /bin/sh -c "cd /var/www/html; phpunit UnitTestServiceClasses.php"
+	                """
+	            }
+	            // Run container - on port 9999
+	            //infomediaImage.run("-p 9999:80 --name infomedia")
+	        }
+	        stage("Docker:clean up unittest"){
+	            sh """
+	                docker stop unittest
+	                """
+	            // remove container
+	            sh """
+	                docker rm unittest
+	                """
+	            // CLEAN UP - remove unused images
+	            sh """
+	                docker image prune -f
+	                """
+	        }
+	
+	        stage("Docker:push") {
+	            docker.withRegistry('https://docker-dscrum.dbc.dk', 'artifactory-api-key') {
+	                infomediaImage.push()
+	            }
+	        }
+		}
+    }
+}

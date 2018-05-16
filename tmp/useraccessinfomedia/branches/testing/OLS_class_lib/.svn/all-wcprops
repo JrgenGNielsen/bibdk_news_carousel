@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/!svn/ver/120295/php/OpenLibrary/class_lib/trunk
+END
+aaa_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/120114/php/OpenLibrary/class_lib/trunk/aaa_class.php
+END
+marc_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/112594/php/OpenLibrary/class_lib/trunk/marc_class.php
+END
+search_profile_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/97696/php/OpenLibrary/class_lib/trunk/search_profile_class.php
+END
+ini_extend_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/ini_extend_class.php
+END
+MaterialIdTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/MaterialIdTest.php
+END
+bibdk_info_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/93466/php/OpenLibrary/class_lib/trunk/bibdk_info_class.php
+END
+ftp_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/ftp_class.php
+END
+ncip_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/116558/php/OpenLibrary/class_lib/trunk/ncip_class.php
+END
+z3950_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/z3950_class.php
+END
+universal_search_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/universal_search_class.php
+END
+memcache_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/118558/php/OpenLibrary/class_lib/trunk/memcache_class.php
+END
+cache_server.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/cache_server.php
+END
+curl_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/120114/php/OpenLibrary/class_lib/trunk/curl_class.php
+END
+agency_type_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/97696/php/OpenLibrary/class_lib/trunk/agency_type_class.php
+END
+memcachedb_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/memcachedb_class.php
+END
+LibV3API_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/LibV3API_class.php
+END
+oci_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/120114/php/OpenLibrary/class_lib/trunk/oci_class.php
+END
+tokenizer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/tokenizer_class.php
+END
+xml_func_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/xml_func_class.php
+END
+webServiceClientUtils_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/webServiceClientUtils_class.php
+END
+http_wrapper_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/94022/php/OpenLibrary/class_lib/trunk/http_wrapper_class.php
+END
+inifile_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/100105/php/OpenLibrary/class_lib/trunk/inifile_class.php
+END
+timer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/120132/php/OpenLibrary/class_lib/trunk/timer_class.php
+END
+cql2tree_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/118292/php/OpenLibrary/class_lib/trunk/cql2tree_class.php
+END
+show_priority_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/97696/php/OpenLibrary/class_lib/trunk/show_priority_class.php
+END
+marc_class.DEPRECATED.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/marc_class.DEPRECATED.php
+END
+cql2rpn_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/cql2rpn_class.php
+END
+query_schema_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/query_schema_class.php
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/view.php
+END
+webServiceServer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/120295/php/OpenLibrary/class_lib/trunk/webServiceServer_class.php
+END
+license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/license.txt
+END
+weekcode_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/weekcode_class.php
+END
+open_agency_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/97696/php/OpenLibrary/class_lib/trunk/open_agency_class.php
+END
+format_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/120114/php/OpenLibrary/class_lib/trunk/format_class.php
+END
+pg_database_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/pg_database_class.php
+END
+ncipClassTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/ncipClassTest.php
+END
+es_database_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/es_database_class.php
+END
+xmlwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/xmlwriter_class.php
+END
+open_agency_v2_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/120114/php/OpenLibrary/class_lib/trunk/open_agency_v2_class.php
+END
+verbose_json_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/120292/php/OpenLibrary/class_lib/trunk/verbose_json_class.php
+END
+abstractwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/abstractwriter_class.php
+END
+xmlconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/118297/php/OpenLibrary/class_lib/trunk/xmlconvert_class.php
+END
+cql2solr_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/cql2solr_class.php
+END
+cache_client_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/cache_client_class.php
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/Makefile
+END
+password_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/password_class.php
+END
+stringwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/stringwriter_class.php
+END
+webserverclass_php_input.patch
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/115735/php/OpenLibrary/class_lib/trunk/webserverclass_php_input.patch
+END
+ncip_info_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/95818/php/OpenLibrary/class_lib/trunk/ncip_info_class.php
+END
+solr_query_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/118297/php/OpenLibrary/class_lib/trunk/solr_query_class.php
+END
+verbose_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/118249/php/OpenLibrary/class_lib/trunk/verbose_class.php
+END
+object_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/118294/php/OpenLibrary/class_lib/trunk/object_class.php
+END
+ip_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/118294/php/OpenLibrary/class_lib/trunk/ip_class.php
+END
+registry_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/118297/php/OpenLibrary/class_lib/trunk/registry_class.php
+END
+material_id_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/111905/php/OpenLibrary/class_lib/trunk/material_id_class.php
+END
+jsonconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/118294/php/OpenLibrary/class_lib/trunk/jsonconvert_class.php
+END
+echowriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/echowriter_class.php
+END
+objconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/118899/php/OpenLibrary/class_lib/trunk/objconvert_class.php
+END
+IDatabase_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/111590/php/OpenLibrary/class_lib/trunk/IDatabase_class.php
+END
+restconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/118297/php/OpenLibrary/class_lib/trunk/restconvert_class.php
+END
+StringWriterTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/StringWriterTest.php
+END

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" xmlns:uaim="http://oss.dbc.dk/ns/useraccessinfomedia" targetNamespace="http://oss.dbc.dk/ns/useraccessinfomedia" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation xml:lang="eng">This XML Schema describes the data and structure of data of the UserAccessInfomedia-service.</xs:documentation>
+	</xs:annotation>
+	<xs:element name="checkArticleRequest">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Sends a verification request for one or more articles together with user information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:articleIdentifier" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:callback" minOccurs="0"/>
+				<xs:element ref="uaim:outputType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="checkArticleResponse">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Returns a verification of whether each of  the requested article/articles is found or an error message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="uaim:checkArticleResponseDetails" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:error" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="checkReviewRequest">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Sends a request to verify if one or more works has reviews together with user information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:workIdentifier" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:callback" minOccurs="0"/>
+				<xs:element ref="uaim:outputType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="checkReviewResponse">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Returns the number of reviews found of each of the requested works or an error message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="uaim:checkReviewResponseDetails" minOccurs="0"/>
+				<xs:element ref="uaim:error" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getArticleRequest">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Sends a request for one or more articles together with user information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:articleIdentifier" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:libraryCode"/>
+				<xs:element ref="uaim:userId" minOccurs="0"/>
+				<xs:element ref="uaim:userPinCode" minOccurs="0"/>
+				<xs:element ref="uaim:callback" minOccurs="0"/>
+				<xs:element ref="uaim:outputType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getArticleResponse">
+		<xs:annotation>
+			<xs:documentation>Returns a verification of whether each of the requested article/articles is found and articles in full text. Or an error message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="uaim:getArticleResponseDetails" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:error" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getReviewRequest">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Sends a request for reviews of one or more works together with user information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:workIdentifier" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:libraryCode"/>
+				<xs:element ref="uaim:userId" minOccurs="0"/>
+				<xs:element ref="uaim:userPinCode" minOccurs="0"/>
+				<xs:element ref="uaim:callback" minOccurs="0"/>
+				<xs:element ref="uaim:outputType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getReviewResponse">
+		<xs:annotation>
+			<xs:documentation>Returns the number of reviews found of each of the requested works and the id-number and full text of each of the reviews. Or an error message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="uaim:getReviewResponseDetails" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:error" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="checkArticleResponseDetails">
+		<xs:annotation>
+			<xs:documentation>Verification of whether each of the requested articles are found</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:articleVerified"/>
+				<xs:element ref="uaim:articleIdentifier"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="checkReviewResponseDetails">
+		<xs:annotation>
+			<xs:documentation>Number of reviews of each of the requested works found</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:workIdentifier"/>
+				<xs:element ref="uaim:reviewsCount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getArticleResponseDetails">
+		<xs:annotation>
+			<xs:documentation>Verification of whether each of the requested articles are found and each found article as full text</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:articleVerified"/>
+				<xs:element ref="uaim:articleIdentifier"/>
+				<xs:element ref="uaim:imArticle" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getReviewResponseDetails">
+		<xs:annotation>
+			<xs:documentation>Number of reviews of each of the requested works found and  the id-number and full text of each of the reviews.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uaim:workIdentifier" minOccurs="0"/>
+				<xs:element ref="uaim:reviewsCount" minOccurs="0"/>
+				<xs:element ref="uaim:articleIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="uaim:imArticle" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="articleIdentifier">
+		<xs:complexType mixed="true">
+			<xs:choice>
+				<xs:element ref="uaim:faust" minOccurs="0"/>
+				<xs:element ref="uaim:file" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="articleVerified" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Is the the requested article verified?</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="callback" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The function to callback on JSON</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="error" type="uaim:errorType">
+		<xs:annotation>
+			<xs:documentation>Returns one of the error messages defined in errorType</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="faust" type="xs:string"/>
+	<xs:element name="file" type="xs:string"/>
+	<xs:element name="imArticle" type="xs:string">
+		<xs:annotation>
+			<xs:documentation xml:lang="eng">Format of the returned articles and reviews.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="isbn" type="xs:string"/>
+	<xs:element name="libraryCode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The code of the user's library to be used in requests</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="outputType">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Defines the outputtype of the operation</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="xml"/>
+				<xs:enumeration value="json"/>
+				<xs:enumeration value="php"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="reviewsCount" type="xs:integer">
+		<xs:annotation>
+			<xs:documentation>Number of reviews found of a certain work</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="userId" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The user's library id-number to be used in requests</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="userPinCode" type="xs:integer">
+		<xs:annotation>
+			<xs:documentation>The user's library pincode to be used in requests</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="workIdentifier">
+		<xs:complexType mixed="true">
+			<xs:choice>
+				<xs:element ref="uaim:isbn" minOccurs="0"/>
+				<xs:element ref="uaim:faust" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="errorType">
+		<xs:annotation>
+			<xs:documentation>Possible error messages</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="service_not_licensed"/>
+			<xs:enumeration value="service_unavailable"/>
+			<xs:enumeration value="library_not_found"/>
+			<xs:enumeration value="error_in_request"/>
+			<xs:enumeration value="borrower_not_found"/>
+			<xs:enumeration value="borrowercheck_not_allowed"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

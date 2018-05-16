@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/120160/php/webservices/useraccessinfomedia/trunk
+END
+infomedia.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/117062/php/webservices/useraccessinfomedia/trunk/infomedia.xsd
+END
+server.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/7253/php/webservices/useraccessinfomedia/trunk/server.php
+END
+infomedia.ini_INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/73306/php/webservices/useraccessinfomedia/trunk/infomedia.ini_INSTALL
+END
+infomedia_logo.gif
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/7253/php/webservices/useraccessinfomedia/trunk/infomedia_logo.gif
+END
+Jenkinsfile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/119108/php/webservices/useraccessinfomedia/trunk/Jenkinsfile
+END
+infomedia.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/115748/php/webservices/useraccessinfomedia/trunk/infomedia.wsdl
+END
+service_classes.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/120160/php/webservices/useraccessinfomedia/trunk/service_classes.php
+END
+UnitTestServiceClasses.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/117462/php/webservices/useraccessinfomedia/trunk/UnitTestServiceClasses.php
+END
+infomedia_webservice_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/!svn/ver/120159/php/webservices/useraccessinfomedia/trunk/infomedia_webservice_class.php
+END
+infomedia_swagger_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/120158/php/webservices/useraccessinfomedia/trunk/infomedia_swagger_class.php
+END

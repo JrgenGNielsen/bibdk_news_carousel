@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/!svn/ver/100715/php/webservices/useraccessinfomedia/tags/1.4/OLS_class_lib/simpletest/extensions
+END
+testdox.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/!svn/ver/100715/php/webservices/useraccessinfomedia/tags/1.4/OLS_class_lib/simpletest/extensions/testdox.php
+END
+junit_xml_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/!svn/ver/100715/php/webservices/useraccessinfomedia/tags/1.4/OLS_class_lib/simpletest/extensions/junit_xml_reporter.php
+END
+pear_test_case.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/!svn/ver/100715/php/webservices/useraccessinfomedia/tags/1.4/OLS_class_lib/simpletest/extensions/pear_test_case.php
+END

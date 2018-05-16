@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/!svn/ver/118997/php/OpenLibrary/class_lib/trunk/test
+END
+simpletest_xmlconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/102682/php/OpenLibrary/class_lib/trunk/test/simpletest_xmlconvert_class.php
+END
+simpletest_memcache_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_memcache_class.php
+END
+simpletest_stringwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_stringwriter_class.php
+END
+simpletest_solr_query_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/100276/php/OpenLibrary/class_lib/trunk/test/simpletest_solr_query_class.php
+END
+simpletest_verbose_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_verbose_class.php
+END
+simpletest_curl_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_curl_class.php
+END
+simpletest_object_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/85604/php/OpenLibrary/class_lib/trunk/test/simpletest_object_class.php
+END
+simpletest_ip_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/96435/php/OpenLibrary/class_lib/trunk/test/simpletest_ip_class.php
+END
+simpletest_jsonconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_jsonconvert_class.php
+END
+simpletest_oci_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_oci_class.php
+END
+simpletest_xml_func_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_xml_func_class.php
+END
+simpletest_echowriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_echowriter_class.php
+END
+simpletest_objconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/118997/php/OpenLibrary/class_lib/trunk/test/simpletest_objconvert_class.php
+END
+simpletest_restconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_restconvert_class.php
+END
+simpletest_inifile_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_inifile_class.php
+END
+simpletest_timer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_timer_class.php
+END
+simpletest_cql2tree_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/!svn/ver/100248/php/OpenLibrary/class_lib/trunk/test/simpletest_cql2tree_class.php
+END
+simpletest_ftp_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_ftp_class.php
+END
+simpletest_pg_database_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_pg_database_class.php
+END
+simpletest_true.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/simpletest_true.php
+END
+testsuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/82192/php/OpenLibrary/class_lib/trunk/test/testsuite.php
+END

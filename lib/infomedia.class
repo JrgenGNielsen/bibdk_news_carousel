@@ -1,0 +1,475 @@
+<?php
+/**
+ * @file
+ * Infomedia Class.
+ */
+
+/**
+ * Class infomedia
+ *
+ * Handle infomedia's new api
+ */
+class infomedia {
+  
+  /**
+   * Article request url.
+   * @var articleUrl
+   */
+  protected $articleUrl = 'https://mediaresearchapi.infomedia.dk/api/v1/article?id=';
+  
+  /**
+   * Article search request url.
+   * @var articleSearchUrl
+   */
+  protected $articleSearchUrl = 'https://mediaresearchapi.infomedia.dk/api/v1/article/search';
+  
+  /**
+   * authenticate request url.
+   * @var authenticateUrl
+   */
+  protected $authenticateUrl = 'https://mediaresearchapi.infomedia.dk/oauth/token';
+  
+  /**
+   * authenticate username.
+   * @var username
+   */
+  protected $username = 'infomediabruger@dbc.dk';
+  
+  /**
+   * authenticate password.
+   * @var password
+   */
+  protected $password = 'TrylleStavDbc!6102';
+  
+  /**
+   * Infomedia search result.
+   * @var SearchResult
+   */
+  protected $SearchResult = array();
+  
+  /**
+   * Infomedia search from date.
+   * @var SearchFrom
+   */
+  protected $SearchFrom = NULL;
+  
+  /**
+   * Infomedia search to date.
+   * @var SearchTo
+   */
+  protected $SearchTo = NULL;
+  
+  /**
+   * Infomedia search number of articles.
+   * @var pageSize
+   */
+  protected $pageSize = 1000;
+  
+  /**
+   * Retry Infomedia search?.
+   * @var retry
+   */
+  protected $retry = TRUE;
+  
+  /**
+   *  Constructor
+   */
+  public function __construct(array $options = array()) {
+    $this->searchFrom = !empty($options['searchFrom']) ? $options['searchFrom'] : date('Y-m-d', strtotime('-1 day'));
+    // $this->searchFrom = !empty($options['searchFrom']) ? $options['searchFrom'] : date('Y-m-d', strtotime('-9 days'));
+    $this->searchTo   = !empty($options['searchTo']) ? $options['searchTo'] : date('Y-m-d');
+    $this->pageSize   = !empty($options['pageSize']) ? $options['pageSize'] : 1000;
+    $this->retry      = TRUE;
+  }
+
+  public function getArticle($fileId) {
+
+    $curl = new MicroCURL;
+    $url = $this->articleUrl;
+    $url .= self::decode_file_id($fileId);
+    $curl->set_url($url);
+
+    // get authorization token
+    $token = $this->authenticate();
+    $curl->set_option(CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
+    $xml = $curl->get();
+    
+    $content =  self::parse_article($xml);
+    return $content;
+  }
+  
+  public function getArticleSearch() {
+
+    $curl = new MicroCURL;
+    $url = $this->articleSearchUrl;
+    $curl->set_url($url);
+
+    // get authorization token
+    $token = $this->authenticate();
+    
+    /* full parameters example
+    $requestParameters = array(
+      'IqlQuery' => "string",
+      'PagingParameter' => (object) array(
+        'StartIndex' => 0,
+        'CursorMark' => "string",
+        'UseCursorPaging' => true,
+        'Pagesize' => 10,
+      )
+      'SearchRange' => (object) array(
+        'SearchFrom' => "2018-05-14T09:02:26.455Z",
+        'SearchTo' => "2018-05-15T09:02:26.455Z",
+      )
+      'DoHightlight' => false,
+      'HighlightParameter' => (object) array(
+        'StartTag' => "string",
+        'StopTag' => "string",
+      )
+      'IncludeFullArticleData' => true,
+    );
+    */
+    
+    $requestParameters = array(
+      // 'IqlQuery' => "sourcetype:L OR R",
+      'IqlQuery' => "sourcetype:L AND wordcount:>800",
+      'PagingParameter' => (object) array(
+        'StartIndex' => 0,
+        'UseCursorPaging' => true,
+        'Pagesize' => $this->pageSize,
+      ),
+      'SearchRange' => (object) array(
+        'SearchFrom' => $this->searchFrom,
+        'SearchTo' => $this->searchTo,
+      ),
+      'IncludeFullArticleData' => true,
+    );
+
+    $curl->set_option(
+      CURLOPT_POST, 
+      TRUE
+    );
+
+    $curl->set_option(
+      CURLOPT_POSTFIELDS, 
+      json_encode($requestParameters)
+    );
+
+    $curl->set_option(
+      CURLOPT_HTTPHEADER,
+      array(
+        'Content-Type: application/json',
+        'Accept: application/json',
+        'Authorization: Bearer ' . $token
+      )
+    );
+    
+    $json = $curl->get();
+    $this->searchResult = json_decode($json);
+    if ($this->searchResult === FALSE) {
+      return FALSE;
+    }
+    
+    if (!empty($this->searchResult->Message)) {
+      if ($this->searchResult->Message == 'Authorization has been denied for this request.' && $this->retry == TRUE) {
+        $this->retry = FALSE;
+        $this->resetToken();
+        $this->searchResult = $this->getArticleSearch();
+      }
+      if ($this->searchResult->Message == 'The request is invalid.') {
+        dpm($this->searchResult, '$this->searchResult->Message');
+        return FALSE;
+      }
+    }
+    
+    $this->searchResult->searchFrom = $this->searchFrom;
+    $this->searchResult->searchTo = $this->searchTo;
+    $this->saveKeywords();
+    return $this->searchResult;
+  }
+  
+  /**
+   * save keywords in database, indexed by publication date.
+   */
+  public function getKeywords() {
+    $date = date('Y-m-d');
+    $emner = variable_get('bibdk_carousel_news_keywords', array());
+dpm($emner);
+    $emner = $emner[$date]['subjects'];
+// $emner = array_slice($emner, 0 , 200);
+   usort($emner, array("infomedia", "cmpEmner"));
+    $emner = array_slice($emner, 0 , 20);
+dpm($emner);
+  }
+    
+  /**
+   * saveKeywords
+   */
+  public function saveKeywords() {
+    // hent emneord ud fra tekst.
+    if ( sizeof($this->searchResult->Articles ) > 0 ) {
+      foreach ($this->searchResult->Articles as $n => $article) {
+        $utc_date = !empty($article->PublishDate) ? $article->PublishDate : gmdate("Y-m-d\TH:i:s\Z");
+        $text = $article->BodyText;
+        $text = self::stripHtmlTags($text);
+        // curl -X POST -d "text=de graver efter olie i iraq"  http://ml-p02.dbc.dk:8000/createMetaDataFromText
+        $url = 'http://ml-p02.dbc.dk:8000/createMetaDataFromText';
+        $data = array('text'=>$text);
+        $res = self::httpPost($url, $data);
+        $metadata[$n] = json_decode($res['content']);
+        $metadata[$n]->utc_date = $utc_date;
+      }
+    } else {
+      dpm($result, 'ERROR');
+    }
+    
+    $emner = variable_get('bibdk_carousel_news_keywords', array());
+    $emner_tmp = array();
+    if ( sizeof($metadata) > 0 ) {
+      foreach ( $metadata as $set ) {
+        $date = date('Y-m-d', strtotime($set->utc_date));
+        if (!isset($emner_tmp[$date])) {
+          $emner_tmp[$date] = array('count' => 1, 'subjects' => array());
+        } else {
+          $emner_tmp[$date]['count']++;
+        }
+        foreach ( $set->emner as $n => $emne ) {
+          // vi tager kun emneord med vægt over 0.1
+          $weight = $emne[1];
+          if ($weight <= 0.1) {
+            continue;
+          }
+          $emneord = trim($emne[0]);
+          self::removeMarcFormat($emneord);
+          if (!isset($emner_tmp[$date]['subjects'][$emneord])) {
+            $emner_tmp[$date]['subjects'][$emneord] = array(
+              'count' => 1,
+              'weight' => $weight,
+              'emneord' => $emneord,
+            );
+          } else {
+            $emner_tmp[$date]['subjects'][$emneord]['count']++;
+            $emner_tmp[$date]['subjects'][$emneord]['weight'] += $weight;
+          }
+        }
+      }
+      $emner = array_merge($emner, $emner_tmp);
+    } else {
+      dpm($metadata, 'ERROR: no metadata.');
+    }
+    variable_set('bibdk_carousel_news_keywords', $emner);
+  }
+
+  /**
+   * Reset token
+   */
+  public function resetToken() {
+    $token = $this->authenticate(TRUE);
+  }
+
+  /**
+   * Get token
+   *
+   * @param $reset boolean
+   */
+  private function authenticate($reset = FALSE) {
+
+    // use temp dir as cache folder
+    $file = sys_get_temp_dir(). '/infomedia_swagger_token.txt';
+    $token = @file_get_contents($file);
+    if ($token === FALSE || $reset) {
+      
+      // no token yet
+      $curl = new MicroCURL;
+
+      $curl->set_option(CURLOPT_HTTPHEADER, array(
+        "Content-Type: application/x-www-form-urlencoded",
+        "Accept: application/json"
+      ));
+      
+      $curl->set_url($this->authenticateUrl);
+      
+      $post = array(
+        'grant_type' => 'password',
+        'username' => $this->username,
+        'password' => $this->password
+      );
+      
+      $url_params = http_build_query($post);
+      $curl->set_option(CURLOPT_POST, count($post));
+      $curl->set_option(CURLOPT_POSTFIELDS, $url_params);
+
+      $result = $curl->get();
+      // self::check_curl($curl);
+
+      $token = self::parse_token($result);
+      if ($token){
+        file_put_contents($file, $token);
+      }
+    }
+    return $token;
+  }
+  
+  /**
+   * @param $result
+   */
+  private static function parse_token($result) {
+
+    $json = json_decode($result);
+    
+    // $result is json
+    if ($json === FALSE) {
+      return FALSE;
+    }
+    
+    // check for errors
+    if (isset($json->error)) {
+      return FALSE;
+    }
+    
+    if (!empty($json->access_token)){
+      // all is good
+      return $json->access_token;
+    }
+    else{
+      // something is wrong
+      // verboseJson::log(ERROR, 'infomedia_swagger::no access token : ' . json_encode($json));
+    }
+
+    return FALSE;
+  }
+
+ /**
+   * fileID is of the form INF\2007\09\26\e0b692db.xml
+   * Get the last part of fileId
+   * @param $fileId
+   */
+  private static function decode_file_id($fileId) {
+
+    $id = urldecode($fileId);
+    $parts = explode('\\', $id);
+    $idPart = array_pop($parts);
+    $part = explode('.', $idPart);
+    return current($part);
+  }
+
+  /**
+   * Parse given infomedia-xml and extract relevant fields. Generate and return HTML
+   */
+  private static function parse_article(&$json) {
+// 
+    $result = json_decode($json);
+    if ($result === FALSE) {
+      // verboseJson::log(ERROR, 'infomedia_swagger:: bad result: ' . $json);
+      return FALSE;
+    }
+
+    $text = '';
+    foreach ($result->Articles as $article) {
+      $text .= isset($article->Heading) ? $article->Heading . "\n" : '';
+      $text .= isset($article->Authors) ? implode($article->Authors, ',') . "\n" : '';
+      // $text = isset($article->PublishDate) ? helpFunc::danish_date("d M Y", strtotime($article->PublishDate)) : '';
+      $text .= isset($article->Source) ? $article->Source . "\n" : '';
+      $text .= isset($article->SubHeading) ? $article->SubHeading . "\n" : '';
+      $text .= isset($article->BodyText) ? $article->BodyText . "\n" : '';
+    }
+
+    return $text;
+  }
+  
+  /**
+   * Remove HTML tags, including invisible text such as style and
+   * script code, and embedded objects.  Add line breaks around
+   * block-level tags to prevent word joining after tag removal.
+   * http://nadeausoftware.com/articles/2007/09/php_tip_how_strip_html_tags_web_page
+   */
+  private static function stripHtmlTags($text) {
+      $text = preg_replace(
+          array(
+            // Remove invisible content
+              '@<head[^>]*?>.*?</head>@siu',
+              '@<style[^>]*?>.*?</style>@siu',
+              '@<script[^>]*?.*?</script>@siu',
+              '@<object[^>]*?.*?</object>@siu',
+              '@<embed[^>]*?.*?</embed>@siu',
+              '@<applet[^>]*?.*?</applet>@siu',
+              '@<noframes[^>]*?.*?</noframes>@siu',
+              '@<noscript[^>]*?.*?</noscript>@siu',
+              '@<noembed[^>]*?.*?</noembed>@siu',
+            // Add line breaks before and after blocks
+              '@</?((address)|(blockquote)|(center)|(del))@iu',
+              '@</?((div)|(h[1-9])|(ins)|(isindex)|(p)|(pre))@iu',
+              '@</?((dir)|(dl)|(dt)|(dd)|(li)|(menu)|(ol)|(ul))@iu',
+              '@</?((table)|(th)|(td)|(caption))@iu',
+              '@</?((form)|(button)|(fieldset)|(legend)|(input))@iu',
+              '@</?((label)|(select)|(optgroup)|(option)|(textarea))@iu',
+              '@</?((frameset)|(frame)|(iframe))@iu',
+          ),
+          array(
+              ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+              "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0",
+              "\n\$0", "\n\$0",
+          ),
+          $text );
+      return strip_tags( $text );
+  }
+  
+  /*
+   * @See: http://php.net/manual/en/function.stream-context-create.php
+   */
+  private static function httpPost($url, $data) {
+    $data_url = http_build_query($data);
+    return array(
+      'content' => file_get_contents(
+        $url,
+        false,
+        stream_context_create(
+          array(
+            'http' => array(
+              'method'  => 'POST',
+              'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                          "Content-Length: " . strlen($data_url) . "\r\n".
+                          "User-Agent:MyAgent/1.0\r\n",
+              'content' => $data_url
+            )
+          )
+        )
+      ),
+      'headers' => $http_response_header
+    );
+  }
+  
+  private function cmpEmner($a, $b) {
+    $keywords_by_date = variable_get('bibdk_carousel_news_keywords', array());
+    $frequency_a = self::keywordFrequency($keywords_by_date, $a['emneord']);
+    $frequency_b = self::keywordFrequency($keywords_by_date, $b['emneord']);
+    $date = date('Y-m-d');
+    $articles_per_day = $keywords_by_date[$date]['count'];
+if ($a['emneord'] == ' Danmark' || $b['emneord'] == ' Danmark' ) {
+  dpm($frequency_a . ' : ' . $frequency_b . ' : ' . $articles_per_day);
+}
+    $weight_a = (($a['weight'] / $a['count']) * ($a['count'] / $articles_per_day)) / $frequency_a * 100;
+    $weight_b = (($b['weight'] / $b['count']) * ($b['count'] / $articles_per_day)) / $frequency_b * 100;
+    if ( $weight_a == $weight_b ) return 0;
+    return ($weight_a > $weight_b) ? -1 : 1;
+  }
+  
+  private static function keywordFrequency($keywords_by_date, $keyword) {
+    $frequency = 1;
+    foreach ($keywords_by_date as $date) {
+      if (key_exists($keyword, $date['subjects'])) {
+        $frequency++;
+      }
+    }
+    return $frequency;
+  }
+  
+  private static function removeMarcFormat(&$emneord) {
+    // Fjern marc-formattering 
+    $patterns[0] = '/^[0-9]{3}\*./';
+    $patterns[1] = '/\*./';
+    $replacements[2] = ' ';
+    $replacements[1] = ', ';
+    $emneord = preg_replace($patterns, $replacements, $emneord);
+  }
+
+} 

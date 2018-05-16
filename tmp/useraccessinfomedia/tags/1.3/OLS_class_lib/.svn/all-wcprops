@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/!svn/ver/56532/php/OpenLibrary/class_lib/trunk
+END
+ip_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/37423/php/OpenLibrary/class_lib/trunk/ip_class.php
+END
+tokenizer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/54642/php/OpenLibrary/class_lib/trunk/tokenizer_class.php
+END
+oci_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/53282/php/OpenLibrary/class_lib/trunk/oci_class.php
+END
+objconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/56114/php/OpenLibrary/class_lib/trunk/objconvert_class.php
+END
+echowriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/26840/php/OpenLibrary/class_lib/trunk/echowriter_class.php
+END
+webServiceClientUtils_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/36617/php/OpenLibrary/class_lib/trunk/webServiceClientUtils_class.php
+END
+StringWriterTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/26840/php/OpenLibrary/class_lib/trunk/StringWriterTest.php
+END
+inifile_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/56165/php/OpenLibrary/class_lib/trunk/inifile_class.php
+END
+timer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/41321/php/OpenLibrary/class_lib/trunk/timer_class.php
+END
+cql2rpn_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/56233/php/OpenLibrary/class_lib/trunk/cql2rpn_class.php
+END
+marc_class.DEPRECATED.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/30841/php/OpenLibrary/class_lib/trunk/marc_class.DEPRECATED.php
+END
+marc_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/51754/php/OpenLibrary/class_lib/trunk/marc_class.php
+END
+license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/4357/php/OpenLibrary/class_lib/trunk/license.txt
+END
+search_profile_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/52834/php/OpenLibrary/class_lib/trunk/search_profile_class.php
+END
+ini_extend_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/28122/php/OpenLibrary/class_lib/trunk/ini_extend_class.php
+END
+MaterialIdTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/27747/php/OpenLibrary/class_lib/trunk/MaterialIdTest.php
+END
+bibdk_info_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/56521/php/OpenLibrary/class_lib/trunk/bibdk_info_class.php
+END
+ncip_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/36887/php/OpenLibrary/class_lib/trunk/ncip_class.php
+END
+ncipClassTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/32244/php/OpenLibrary/class_lib/trunk/ncipClassTest.php
+END
+pg_database_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/51393/php/OpenLibrary/class_lib/trunk/pg_database_class.php
+END
+es_database_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/52203/php/OpenLibrary/class_lib/trunk/es_database_class.php
+END
+xmlwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/4357/php/OpenLibrary/class_lib/trunk/xmlwriter_class.php
+END
+memcache_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/40484/php/OpenLibrary/class_lib/trunk/memcache_class.php
+END
+cache_server.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/6346/php/OpenLibrary/class_lib/trunk/cache_server.php
+END
+curl_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/52563/php/OpenLibrary/class_lib/trunk/curl_class.php
+END
+verbose_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/37415/php/OpenLibrary/class_lib/trunk/verbose_class.php
+END
+memcachedb_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/37406/php/OpenLibrary/class_lib/trunk/memcachedb_class.php
+END
+material_id_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/48761/php/OpenLibrary/class_lib/trunk/material_id_class.php
+END
+xml_func_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/7055/php/OpenLibrary/class_lib/trunk/xml_func_class.php
+END
+IDatabase_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/40318/php/OpenLibrary/class_lib/trunk/IDatabase_class.php
+END
+restconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/50170/php/OpenLibrary/class_lib/trunk/restconvert_class.php
+END
+http_wrapper_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/7864/php/OpenLibrary/class_lib/trunk/http_wrapper_class.php
+END
+aaa_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/55645/php/OpenLibrary/class_lib/trunk/aaa_class.php
+END
+webServiceServer_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/56491/php/OpenLibrary/class_lib/trunk/webServiceServer_class.php
+END
+query_schema_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/24915/php/OpenLibrary/class_lib/trunk/query_schema_class.php
+END
+ftp_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/52203/php/OpenLibrary/class_lib/trunk/ftp_class.php
+END
+z3950_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/54671/php/OpenLibrary/class_lib/trunk/z3950_class.php
+END
+abstractwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/26840/php/OpenLibrary/class_lib/trunk/abstractwriter_class.php
+END
+xmlconvert_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/54720/php/OpenLibrary/class_lib/trunk/xmlconvert_class.php
+END
+cql2solr_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/53674/php/OpenLibrary/class_lib/trunk/cql2solr_class.php
+END
+cache_client_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/25395/php/OpenLibrary/class_lib/trunk/cache_client_class.php
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/26835/php/OpenLibrary/class_lib/trunk/Makefile
+END
+stringwriter_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/26840/php/OpenLibrary/class_lib/trunk/stringwriter_class.php
+END
+solr_query_class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/56303/php/OpenLibrary/class_lib/trunk/solr_query_class.php
+END

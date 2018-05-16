@@ -1,0 +1,218 @@
+# 12/12-2007 Rettet struktur til 555 for DAN1 1:38 hm og DBC1 1:217 hs
+# 11/12-2007 Indsat DAN1 1:38 hm og DBC1 1:217 hs
+# 12/7-2007 Indsat DAN1 1:50 uu (erstatter DBC1 1:67)
+# 22/6-2007 Indsat registrene kn/lkn som DAN1 1=49 og n51 som DBC1 1=215
+# 13/12-2006 Indsat registrene ra, rb, rd og rp som DBC-attributter 211-214 til restriktioner
+# 13/12-2006 Justeret i forhold til de nye registre og Praksisregelændringerne (aj,op,ej,ht,ip,ka,kg,kr,kx,ld,ns,sf,so)
+# 27/11-2006 Indsat DBC1 1=77 (kg), 1=143 (sf) og 1=144 (ka) til konsulentafmærkningssøgning
+# 5/5-2006 Indsat term for 1016 af hensyn til frasesøgning i DBCkat
+# 14/3-2006 Ændret struktur 2 til pw for DBC1 1=14 (ns)
+# 28/7-2005 Indsat DBC1 1=17 (iv) af hensyn til littolk-basen
+# 21/4-2005/BDM indsat n50 (DBC1 1=140) til sdi-overvågning
+# Indsat bc-søgekode til EAN (BIB1 1214) 16/12-2004 BDM
+# Indsat dbc1 use 108 til søgning med ssp direkte i sp-registret 9/8-2004 BDM
+# Rettet mod danZIG + tilføjet DBC1 62 (ld), 66 (ip) og 67 (uu) 24/1-2003 BDM
+# Rettet strukturattr. for attr. 7,8,1007 til 555 4/4-2002 BDM
+# Rettet strukturattr. for attr. 12 til 555 (OR for komma) 27/3-2002 BDM
+# Indsat mat for use 1031 26/3-2002 BDM
+# Rettet strukturattr. for attr. 56 + 1001 + DBC1 6 til 555 (OR for komma) 21/3-2002 BDM
+# Rettet completeness til 2 for 1024 (på vej mod danZIG-ajourføring)
+# Rettet strukturattr. for attr. 54 + 1031 til 555 (OR for komma) 14/3-2002 BDM
+# Indsat oversigt over nye dbc1 til dk5-basen 4/3-2002 BDM
+# Indsat snydekode til årbøger som periodikasingleposter - mapf. Leget med pos. og comp. 15/1 BDM
+# Begrænserne justeret 10/12-2001 BDM
+# Tilrettet til DanBibv3 og netpunkt.dk 14/11-2001 BDM
+# Subset of bib-1 attributes map to CCL qualifiers 
+# $Id: danbib.search,v 1.2 2008-10-02 10:47:37 fvs Exp $
+#
+ti   BIB1,u=4     r=3   p=3   s=pw   t=l,r   c=1
+lti  BIB1,u=4     r=3   p=1   s=1    t=r     c=3
+se   BIB1,u=5     r=3   p=3   s=pw   t=l,r   c=1
+lse  BIB1,u=5     r=3   p=1   s=1    t=r     c=3
+ut   BIB1,u=6     r=3   p=3   s=pw   t=l,r   c=1
+lut  BIB1,u=6     r=3   p=1   s=1    t=r     c=3
+ib   BIB1,u=7     r=3   p=3   s=555  t=l,r   c=2
+in   BIB1,u=8     r=3   p=3   s=555  t=l,r   c=2
+id   BIB1,u=12    r=3   p=3   s=555  t=l,r   c=2
+ddc  BIB1,u=13    r=3   p=1   s=1    t=r     c=3
+ud   BIB1,u=14    r=3   p=3   s=pw   t=l,r   c=1
+udk  BIB1,u=14    r=3   p=1   s=1    t=r     c=3
+lcc  BIB1,u=16    r=3   p=1   s=1    t=r     c=3
+nlm  BIB1,u=17    r=3   p=1   s=1    t=r     c=3
+nal  BIB1,u=18    r=3   p=1   s=1    t=r     c=3
+kl   BIB1,u=20    r=3   p=3   s=pw   t=l,r   c=1
+lkl  BIB1,u=20    r=3   p=1   s=1    t=r     c=3
+em   BIB1,u=21    r=3   p=3   s=pw   t=l,r   c=1
+lem  BIB1,u=21    r=3   p=1   s=1    t=r     c=3
+ms   BIB1,u=25    r=3   p=3   s=pw   t=l,r   c=1
+lms  BIB1,u=25    r=3   p=1   s=1    t=r     c=3
+år   BIB1,u=31    r=o   p=3   s=4    t=l,r   c=2
+nt   BIB1,u=33    r=3   p=3   s=pw   t=l,r   c=1
+lnt  BIB1,u=33    r=3   p=1   s=1    t=r     c=3
+pa   BIB1,u=35    r=3   p=3   s=pw   t=l,r   c=1
+lpa  BIB1,u=35    r=3   p=1   s=1    t=r     c=3
+tt   BIB1,u=42    r=3   p=3   s=pw   t=l,r   c=1
+ltt  BIB1,u=42    r=3   p=1   s=1    t=r     c=3
+spr  BIB1,u=54    r=3   p=3   s=555  t=l,r   c=2
+sp   BIB1,u=54    r=3   p=3   s=555  t=l,r   c=2
+ul   BIB1,u=55    r=3   p=3   s=2    t=l,r   c=2
+owner_id   BIB1,u=56  r=3   p=3    s=555  t=l,r   c=1
+lok  BIB1,u=56    r=3   p=3   s=555  t=l,r   c=1	#use-attribut 56 refererer til ln (DBC1 1=6) i danZIG)
+pu   BIB1,u=59    r=3   p=3   s=pw   t=l,r   c=1
+co   BIB1,u=60    r=3   p=3   s=2    t=l,r   c=2
+no   BIB1,u=63    r=3   p=3   s=pw   t=l,r   c=1
+mp_id   BIB1,u=1001  r=3   p=3    s=555  t=l,r   c=1
+kat  BIB1,u=1001  r=3   p=3   s=555  t=l,r   c=1
+fo   BIB1,u=1003  r=3   p=3   s=101  t=l,r   c=1
+lfo  BIB1,u=1003  r=3   p=1   s=101  t=r     c=2
+pe   BIB1,u=1004  r=3   p=3   s=101  t=l,r   c=1
+lpe  BIB1,u=1004  r=3   p=1   s=101  t=r     c=2
+ko   BIB1,u=1005  r=3   p=3   s=101  t=l,r   c=1
+lko  BIB1,u=1005  r=3   p=1   s=101  t=r     c=2
+is   BIB1,u=1007  r=3   p=3   s=555  t=l,r   c=2
+ep   BIB1,u=1009  r=3   p=3   s=pw   t=l,r   c=1
+lep  BIB1,u=1009  r=3   p=1   s=1    t=r     c=3
+op   BIB1,u=1011  r=3   p=3   s=2    t=l,r   c=1
+aj   BIB1,u=1012  r=3   p=3   s=2    t=l,r   c=1
+default_id BIB1,u=1016   r=3   p=3   s=pw   t=l,r   c=1
+term BIB1,u=1016   r=3   p=3   s=pw   t=l,r   c=1
+fl   BIB1,u=1018  r=3   p=3   s=pw   t=l,r   c=1
+km   BIB1,u=1024  r=3   p=3   s=2    t=l,r   c=2
+rt   BIB1,u=1026  r=3   p=3   s=pw   t=l,r   c=1
+lrt  BIB1,u=1026  r=3   p=1   s=1    t=r     c=2
+mk   BIB1,u=1031  r=3   p=3   s=555  t=l,r   c=1
+ma   BIB1,u=1031  r=3   p=3   s=555  t=l,r   c=1
+mat  BIB1,u=1031  r=3   p=3   s=555  t=l,r   c=1
+mapf   BIB1,u=1031  r=3   p=1   s=1    t=l,r   c=3  #danwebforsøg a.h.t. årbogssingleposter
+ww   BIB1,u=1032  r=3   p=3   s=104  t=l,r   c=2
+vp   BIB1,u=1033  r=3   p=3   s=pw   t=l,r   c=1
+lvp  BIB1,u=1033  r=3   p=1   s=1    t=r     c=3
+cl   BIB1,u=1040  r=3   p=3   s=pw   t=l,r   c=1
+lcl  BIB1,u=1040  r=3   p=1   s=1    t=r     c=3
+ek   BIB1,u=1074  r=3   p=3   s=pw   t=l,r   c=1
+lek  BIB1,u=1074  r=3   p=1   s=1    t=r     c=3
+uk   BIB1,u=1080  r=3   p=3   s=pw   t=l,r   c=1
+luk  BIB1,u=1080  r=3   p=1   s=1    t=r     c=3
+ac   BIB1,u=1085  r=3   p=3   s=pw   t=l,r   c=1
+lac  BIB1,u=1085  r=3   p=1   s=1    t=r     c=3
+cp   BIB1,u=1086  r=3   p=3   s=pw   t=l,r   c=1
+lcp  BIB1,u=1086  r=3   p=1   s=1    t=r     c=3
+ed   BIB1,u=1087  r=3   p=3   s=pw   t=l,r   c=1
+led  BIB1,u=1087  r=3   p=1   s=1    t=r     c=3
+ag   BIB1,u=1088  r=3   p=3   s=pw   t=l,r   c=1
+lag  BIB1,u=1088  r=3   p=1   s=1    t=r     c=3
+bcm  BIB1,u=1089  r=3   p=1   s=1    t=r     c=3
+dbk  BIB1,u=1090  r=3   p=1   s=1    t=r     c=3
+ic   BIB1,u=1091  r=3   p=3   s=104  t=l,r   c=2
+im   BIB1,u=1092  r=3   p=3   s=104  t=l,r   c=2
+ir   BIB1,u=1093  r=3   p=3   s=104  t=l,r   c=2
+doi  BIB1,u=1094  r=3   p=3   s=104  t=l,r   c=2
+ou   BIB1,u=1095  r=3   p=3   s=pw   t=l,r   c=1
+st   BIB1,u=1096  r=3   p=3   s=pw   t=l,r   c=1
+lst  BIB1,u=1096  r=3   p=1   s=1    t=r     c=3
+bc   BIB1,u=1214  r=3   p=3   s=1    t=l,r   c=2   #producentens stregkode (023a)- nu med i danZIG
+au   DAN1,u=1     r=3   p=3   s=pw   t=l,r   c=1
+lau  DAN1,u=1     r=3   p=1   s=1    t=r     c=3
+ke   DAN1,u=2     r=3   p=3   s=pw   t=l,r   c=1
+lke  DAN1,u=2     r=3   p=1   s=1    t=r     c=3
+db   DAN1,u=3     r=3   p=3   s=pw   t=l,r   c=1
+ldb  DAN1,u=3     r=3   p=1   s=1    t=r     c=3
+df   DAN1,u=4     r=3   p=3   s=pw   t=l,r   c=1
+ldf  DAN1,u=4     r=3   p=1   s=1    t=r     c=3
+ds   DAN1,u=5     r=3   p=3   s=pw   t=l,r   c=1
+lds  DAN1,u=5     r=3   p=1   s=1    t=r     c=3
+me   DAN1,u=6     r=3   p=3   s=pw   t=l,r   c=1
+lme  DAN1,u=6     r=3   p=1   s=1    t=r     c=3
+fm   DAN1,u=7     r=3   p=3   s=pw   t=l,r   c=1
+lfm  DAN1,u=7     r=3   p=1   s=1    t=r     c=3
+nb   DAN1,u=8     r=3   p=3   s=pw   t=l,r   c=1
+lnb  DAN1,u=8     r=3   p=1   s=1    t=r     c=2
+po   DAN1,u=9     r=3   p=3   s=pw   t=l,r   c=1
+lpo  DAN1,u=9     r=3   p=1   s=101  t=r     c=3
+dk   DAN1,u=10    r=3   p=3   s=pw   t=l,r   c=1
+ldk  DAN1,u=10    r=3   p=1   s=1    t=r     c=3
+ok   DAN1,u=11    r=3   p=3   s=pw   t=l,r   c=1
+gd   DAN1,u=12    r=3   p=3   s=pw   t=l,r   c=1
+lgd  DAN1,u=12    r=3   p=1   s=1    t=r     c=3
+fg   DAN1,u=13    r=3   p=3   s=pw   t=l,r   c=1
+kk   DAN1,u=14    r=3   p=3   s=pw   t=l,r   c=1
+ix   DAN1,u=15    r=3   p=3   s=pw   t=l,r   c=1
+nm   DAN1,u=16    r=3   p=3   s=pw   t=l,r   c=1
+nr   DAN1,u=17    r=3   p=3   s=pw   t=l,r   c=1
+en   DAN1,u=18    r=3   p=3   s=pw   t=l,r   c=1
+tf   DAN1,u=19    r=3   p=3   s=pw   t=l,r   c=1
+lvx  DAN1,u=20    r=3   p=1   s=1    t=r     c=2
+bs   DAN1,u=21    r=3   p=3   s=pw   t=l,r   c=1
+ef   DAN1,u=22    r=3   p=3   s=pw   t=l,r   c=1
+lef  DAN1,u=22    r=3   p=1   s=1    t=r     c=3
+es   DAN1,u=23    r=3   p=3   s=pw   t=l,r   c=1
+les  DAN1,u=23    r=3   p=1   s=1    t=r     c=3
+mo   DAN1,u=24    r=3   p=3   s=pw   t=l,r   c=1
+fv   DAN1,u=25    r=3   p=3   s=pw   t=l,r   c=1
+fb   DAN1,u=26    r=3   p=3   s=pw   t=l,r   c=1
+ts   DAN1,u=27    r=3   p=3   s=pw   t=l,r   c=1
+lts  DAN1,u=27    r=3   p=1   s=1    t=r     c=3
+ej   DAN1,u=37    r=3   p=3   s=2    t=l,r   c=1
+ht   DAN1,u=39    r=3   p=3   s=pw   t=l,r   c=1
+hm   DAN1,u=38    r=3   p=3   s=555  t=l,r   c=2   # hovedmateriale fra 009 *g
+lht  DAN1,u=39    r=3   p=1   s=1    t=r     c=3
+ip   DAN1,u=40    r=3   p=3   s=pw   t=l,r   c=1
+ka   DAN1,u=41    r=3   p=3   s=pw   t=l,r   c=1
+kg   DAN1,u=42    r=3   p=3   s=pw   t=l,r   c=1        # primært til Promat til konsulentgruppering
+kr   DAN1,u=43    r=3   p=3   s=pw   t=l,r   c=1
+kx   DAN1,u=44    r=3   p=3   s=pw   t=l,r   c=1
+ld   DAN1,u=45    r=3   p=3   s=555  t=l,r   c=2
+ns   DAN1,u=46    r=3   p=3   s=pw   t=l,r   c=1
+sf   DAN1,u=47    r=3   p=3   s=pw   t=l,r   c=1
+so   DAN1,u=48    r=3   p=3   s=pw   t=l,r   c=1
+lso  DAN1,u=48    r=3   p=1   s=1    t=r     c=3
+kn   DAN1,u=49    r=3   p=3   s=pw   t=l,r   c=1
+lkn  DAN1,u=49    r=3   p=1   s=1    t=r     c=3
+uu   DAN1,u=50    r=3   p=3   s=pw   t=l,r   c=1
+aå   DBC1,u=1     r=o   p=3   s=4    t=l,r   c=1
+#ht   DBC1,u=2     r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=39
+#lht  DBC1,u=2     r=3   p=1   s=1    t=r     c=3	#flyttet til DAN1 1=39
+#aj   DBC1,u=3     r=3   p=3   s=2    t=l,r   c=1	#flyttet til BIB1 1=1012
+#op   DBC1,u=4     r=3   p=3   s=2    t=l,r   c=1	#flyttet til BIB1 1=1011
+##lop  DBC1,u=5     r=3   p=3   s=2    t=l,r   c=1 #ikke med i rules-tabellen
+ln   DBC1,u=6     r=3   p=3   s=555  t=l,r   c=1	#officiel use-attribut BIB1 1=56, men hos os til begrænser
+#ej   DBC1,u=7     r=3   p=3   s=2    t=l,r   c=1	#flyttet til DAN1 1=37
+rc   DBC1,u=8     r=3   p=3   s=pw   t=l,r   c=1
+lrc  DBC1,u=8     r=3   p=1   s=1    t=r     c=2
+rf   DBC1,u=9     r=3   p=3   s=pw   t=l,r   c=1
+lrf  DBC1,u=9     r=3   p=1   s=1    t=r     c=2
+ri   DBC1,u=10    r=3   p=3   s=pw   t=l,r   c=1
+lri  DBC1,u=10    r=3   p=1   s=1    t=r     c=3
+mfo  DBC1,u=11    r=3   p=1   s=101  t=r     c=3
+mti  DBC1,u=12    r=3   p=1   s=1    t=r     c=3
+mem  DBC1,u=13    r=3   p=1   s=1    t=r     c=3
+#ns   DBC1,u=14    r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=46
+pi   DBC1,u=15    r=3   p=3   s=pw   t=l,r   c=1
+#u=16 kun brugt i dels ac- og acinfo-baserne:
+iv   DBC1,u=17    r=3   p=3   s=555  t=l,r   c=2
+#u=18-41 kun brugt i dels ac- og acinfo-baserne:
+#u=42-44 kun brugt i integra:
+#u=45-51 kun brugt i lektorbasen:
+br   DBC1,u=52    r=3   p=3   s=pw   t=l,r   c=1
+xd   DBC1,u=53    r=3   p=3   s=103  t=l,r   c=1
+#kx   DBC1,u=54    r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=44
+#kr   DBC1,u=55    r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=43
+#u=56-61 kun brugt i dk5-basen:
+#ld   DBC1,u=62    r=3   p=3   s=555  t=l,r   c=2	#flyttet til DAN1 1=45
+#u=62-64 kun brugt i dfa-basen:
+#u=65 kun brugt i integra:
+#ip   DBC1,u=66    r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=40
+#uu   DBC1,u=67    r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=50
+#kg   DBC1,u=77    r=3   p=3   s=pw   t=l,r   c=1       #flyttet til DAN1 1=42
+#u=73-107 kun brugt i basis2.1:
+ssp  DBC1,u=108   r=3   p=3   s=555  t=l,r   c=2
+n50  DBC1,u=140   r=3   p=3   s=2    t=l,r   c=1
+#sf   DBC1,u=143   r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=47
+#ka   DBC1,u=144   r=3   p=3   s=pw   t=l,r   c=1	#flyttet til DAN1 1=41
+ra   DBC1,u=211   r=3   p=3   s=pw   t=l,r   c=1
+rb   DBC1,u=212   r=3   p=3   s=pw   t=l,r   c=1
+rd   DBC1,u=213   r=3   p=3   s=pw   t=l,r   c=1
+rp   DBC1,u=214   r=3   p=3   s=pw   t=l,r   c=1
+n51  DBC1,u=215   r=3   p=3   s=2    t=l,r   c=1
+hs   DBC1,u=217   r=3   p=3   s=555  t=l,r   c=2     #hovedsprog (ikke endnu i danZig)
+

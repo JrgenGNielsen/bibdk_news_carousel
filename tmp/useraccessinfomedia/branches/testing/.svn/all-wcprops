@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/75236/php/webservices/useraccessinfomedia/branches/testing
+END
+server.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/server.php
+END
+infomedia.ini_INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/75235/php/webservices/useraccessinfomedia/branches/testing/infomedia.ini_INSTALL
+END
+infomedia_logo.gif
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/infomedia_logo.gif
+END
+infomedia.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/infomedia.wsdl
+END
+service_classes.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/service_classes.php
+END
+infomedia_template.ini
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/75236/php/webservices/useraccessinfomedia/branches/testing/infomedia_template.ini
+END
+infomedia.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/infomedia.xsd
+END

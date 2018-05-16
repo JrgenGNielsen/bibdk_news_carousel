@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/45401/php/simpletest/simpletest_1.1.0/extensions
+END
+testdox.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/45398/php/simpletest/simpletest_1.1.0/extensions/testdox.php
+END
+junit_xml_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/!svn/ver/45401/php/simpletest/simpletest_1.1.0/extensions/junit_xml_reporter.php
+END
+pear_test_case.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/45398/php/simpletest/simpletest_1.1.0/extensions/pear_test_case.php
+END

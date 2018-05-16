@@ -10,5 +10,6 @@ dependencies[] = ting_openformat
 dependencies[] = image
 
 files[] = test/bibdk_news_carousel.test
+files[] = lib/infomedia.class
 
 configure = admin/config/user-interface/bibdk_news_carousel

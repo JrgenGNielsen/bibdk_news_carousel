@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/xml/request
+END
+checkReview.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/xml/request/checkReview.xml
+END
+checkArticle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/xml/request/checkArticle.xml
+END
+getReview.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/xml/request/getReview.xml
+END
+getArticle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/!svn/ver/75114/php/webservices/useraccessinfomedia/branches/testing/xml/request/getArticle.xml
+END

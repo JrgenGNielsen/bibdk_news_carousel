@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/117424/php/webservices/useraccessinfomedia/trunk/docker/webservice/scripts
+END
+get_trunk.sh
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/!svn/ver/117424/php/webservices/useraccessinfomedia/trunk/docker/webservice/scripts/get_trunk.sh
+END
+build_docker.sh
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/!svn/ver/117424/php/webservices/useraccessinfomedia/trunk/docker/webservice/scripts/build_docker.sh
+END
