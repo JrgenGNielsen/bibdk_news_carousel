@@ -1,8 +1,0 @@
-K 13
-svn:externals
-V 82
-OLS_class_lib -r 56548 https://svn.dbc.dk/repos/php/OpenLibrary/class_lib/trunk
-
-
-
-END
